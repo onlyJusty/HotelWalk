@@ -59,8 +59,13 @@ playerPos.set(0, EYE_HEIGHT, 5);
 // carica glb
 const loader = new GLTFLoader();
 console.log("inizio load hotel.glb");
+const MODEL_URL =
+  "https://github.com/onlyJusty/HotelWalk/raw/main/hotel.glb?raw=1&v=" + Date.now();
+
+console.log("MODEL_URL:", MODEL_URL);
+
 loader.load(
-  "https://github.com/onlyJusty/HotelWalk/raw/main/hotel.glb",
+  MODEL_URL,
   (gltf) => {
     console.log("GLB caricato ✅");
     const model = gltf.scene;
@@ -69,6 +74,7 @@ loader.load(
   undefined,
   (err) => console.error("ERRORE caricamento GLB ❌", err)
 );
+
 
 
     // centra modello (così non ti ritrovi lontanissimo)
