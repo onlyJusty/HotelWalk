@@ -57,7 +57,7 @@ const playerPos = controls.getObject().position;
 playerPos.set(0, EYE_HEIGHT, 5);
 
 // carica glb
-const loader = new GLTFLoader();
+
 console.log("inizio load hotel.glb");
 
 const MODEL_URL =
