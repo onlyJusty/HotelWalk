@@ -59,6 +59,7 @@ playerPos.set(0, EYE_HEIGHT, 5);
 // carica glb
 const loader = new GLTFLoader();
 console.log("inizio load hotel.glb");
+
 const MODEL_URL =
   "https://github.com/onlyJusty/HotelWalk/raw/main/hotel.glb?raw=1&v=" + Date.now();
 
@@ -70,12 +71,6 @@ loader.load(
     console.log("GLB caricato ✅");
     const model = gltf.scene;
     scene.add(model);
-  },
-  undefined,
-  (err) => console.error("ERRORE caricamento GLB ❌", err)
-);
-
-
 
     // centra modello (così non ti ritrovi lontanissimo)
     const box = new THREE.Box3().setFromObject(model);
@@ -92,7 +87,9 @@ loader.load(
     playerPos.set(0, EYE_HEIGHT, Math.max(3, size * 0.1));
   },
   undefined,
-  (err) => console.error("ERRORE caricamento GLB ❌", err)
+  (err) => {
+    console.error("ERRORE caricamento GLB ❌", err);
+  }
 );
 
 // movimento: WASD sul piano XZ, Y sempre EYE_HEIGHT
