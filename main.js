@@ -57,21 +57,14 @@ const playerPos = controls.getObject().position;
 playerPos.set(0, EYE_HEIGHT, 5);
 
 // carica glb
-
+// carica glb
 console.log("inizio load hotel.glb");
 
+const loader = new GLTFLoader();
 const MODEL_URL =
   "https://media.githubusercontent.com/media/onlyJusty/HotelWalk/main/hotel.glb?v=" + Date.now();
 
-
 console.log("MODEL_URL:", MODEL_URL);
-
-const loader = new GLTFLoader();
-
-const MODEL_URL =
-  "https://media.githubusercontent.com/media/onlyJusty/HotelWalk/main/hotel.glb";
-
-console.log("Carico modello da:", MODEL_URL);
 
 loader.load(
   MODEL_URL,
@@ -92,8 +85,8 @@ loader.load(
     camera.far = Math.max(5000, size * 10);
     camera.updateProjectionMatrix();
 
-    // posizione iniziale
-    controls.getObject().position.set(0, 1.6, size * 0.2);
+    // posizione iniziale player
+    playerPos.set(0, EYE_HEIGHT, size * 0.2);
     camera.lookAt(0, 0, 0);
   },
   undefined,
