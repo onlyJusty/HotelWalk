@@ -60,7 +60,8 @@ playerPos.set(0, EYE_HEIGHT, 5);
 const loader = new GLTFLoader();
 console.log("inizio load hotel.glb");
 loader.load(
-  "./hotel.glb",
+  "https://raw.githubusercontent.com/onlyJusty/HotelWalk/main/hotel.glb",
+  //"./hotel.glb",
   (gltf) => {
     console.log("GLB caricato ✅");
     const model = gltf.scene;
