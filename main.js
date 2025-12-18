@@ -63,7 +63,8 @@ loader.load(
   "https://github.com/onlyJusty/HotelWalk/raw/main/hotel.glb",
   (gltf) => {
     console.log("GLB caricato ✅");
-    scene.add(gltf.scene);
+    const model = gltf.scene;
+    scene.add(model);
   },
   undefined,
   (err) => console.error("ERRORE caricamento GLB ❌", err)
